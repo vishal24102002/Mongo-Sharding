@@ -117,7 +117,7 @@ sh.shardCollection("myDatabase.users", { _id: "hashed" });
 '
 ```
 ==============================================================
-## ⚠️ Common error codes 
+## Common error codes 
 ==============================================================
 
 | **Code** | **Meaning / Common Cause** |
