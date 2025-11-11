@@ -119,5 +119,4 @@ sh.shardCollection("myDatabase.users", { _id: "hashed" });
 
 !! Note :- <br>
 --> Keep in mind to remove the directory conflict if starting a new setup for sharding.<br>
---> Also make for using Sharding on a LAN use the ip instead of localhost as mongo does not support both local and ips at a same time<br>
---> 
+--> Also make for using Sharding on a <b>LAN</b> use the <b>IP</b> instead of localhost as mongo does not support both local and ips at a same time<br>
