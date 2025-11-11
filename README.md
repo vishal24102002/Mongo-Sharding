@@ -116,6 +116,17 @@ sh.enableSharding("myDatabase");
 sh.shardCollection("myDatabase.users", { _id: "hashed" });
 '
 ```
+==============================================================
+## ⚠️ Common error codes 
+==============================================================
+
+| **Code** | **Meaning / Common Cause** |
+|-----------|-----------------------------|
+| **100** | Missing log or data directory, bad permissions. |
+| **14 / 20** | `--dbpath` doesn’t exist or not writable. |
+| **48** | Port already in use. |
+| **110** | Replica set name mismatch or connection issue. |
+
 
 !! Note :- <br>
 --> Keep in mind to remove the directory conflict if starting a new setup for sharding.<br>
