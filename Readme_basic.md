@@ -132,4 +132,4 @@ sh.shardCollection("myDatabase.users", { _id: "hashed" });
 --> Keep in mind to remove the directory conflict if starting a new setup for sharding.<br>
 --> Also make for using Sharding on a <b>LAN</b> use the <b>IP</b> instead of localhost as mongo does not support both local and ips at a same time<br>
 --> Use Routers Mongosh to run the mongosb query and also make sure the used the correct shard key.<br>
---> If using more then one PC/Laptop then make sure the MongoDB version is same and also you need to resetup in case of any IP change.so use the static ip instead of dynamic ones.<br>
+--> If using more then one PC/Laptop then make sure the MongoDB version is same and also you need to resetup in case of any IP change.So use the static ip instead of dynamic ones.<br>
