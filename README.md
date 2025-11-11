@@ -2,6 +2,10 @@
 ## MONGODB SHARDING SETUP - COMPLETE GUIDE
 ==================================================================
 
+## Requirements
+1. Same LAN or Network
+2. Same MongoDB Version
+
 ### Port Selections 
 For Config-server use -> [19, 20, 21] <br>
 For Shard port use -> [17, 18, 22, 23, 24, 25] <br>
@@ -132,3 +136,4 @@ sh.shardCollection("myDatabase.users", { _id: "hashed" });
 --> Keep in mind to remove the directory conflict if starting a new setup for sharding.<br>
 --> Also make for using Sharding on a <b>LAN</b> use the <b>IP</b> instead of localhost as mongo does not support both local and ips at a same time<br>
 --> Use Routers Mongosh to run the mongosb query and also make sure the used the correct shard key.
+--> If using more then one PC/Laptop then make sure the MongoDB version is same and also you need to resetup in case of any IP change.so use the static ip instead of dynamic ones.
