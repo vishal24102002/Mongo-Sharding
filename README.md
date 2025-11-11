@@ -2,15 +2,11 @@
 ## MONGODB SHARDING SETUP - COMPLETE GUIDE
 ==================================================================
 
-## Requirements
+### Requirements
 1. Same LAN or Network
 2. Same MongoDB Version
 
 ### Port Selections 
-For Config-server use -> [19, 20, 21] <br>
-For Shard port use -> [17, 18, 22, 23, 24, 25] <br>
-For Route port use -> [17, 30] <br>
-
 ```bash 
 Config: 27019, 27020, 27021
 Shards: 27017, 27018, 27022, 27023, 27024, 27025
