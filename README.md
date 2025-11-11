@@ -1,13 +1,17 @@
-
 ==================================================================
 ## MONGODB SHARDING SETUP - COMPLETE GUIDE
 ==================================================================
 
 ### Port Selections 
-For Config-server use -> [ ] <br>
-For Shard port use -> [ ] <br>
-For Route port use -> [ ] <br>
+For Config-server use -> [19, 20, 21] <br>
+For Shard port use -> [17, 18, 22, 23, 24, 25] <br>
+For Route port use -> [17, 30] <br>
 
+```bash 
+Config: 27019, 27020, 27021
+Shards: 27017, 27018, 27022, 27023, 27024, 27025
+Router: 27030
+```
 ===============================================
 ## STEP 0: CREATE DATA DIRECTORIES
 ===============================================
@@ -22,7 +26,7 @@ sudo mkdir -p /data/configdb2 #--> optional
 sudo mkdir -p /data/shard1a
 sudo mkdir -p /data/shard1b
 ```
-### Create directories for shard 2
+### Create directories for shard 2 (Optional)
 ```bash
 sudo mkdir -p /data/shard2a
 sudo mkdir -p /data/shard2b
@@ -80,11 +84,40 @@ rs.initiate({
 ```
 
 ======================================================
-## STEP 4: START MONGOS (QUERY ROUTER)
+## STEP 3: START MONGOS (QUERY ROUTER)
 ======================================================
 
 ```bash
 mongos --configdb configReplSet/localhost:27019 --port 27030 --logpath /data/mongos.log --fork
 ```
 
+if using more then 1 config server use the below command to run the route
+```bash
+mongos --configdb configReplSet/localhost:27019,localhost:27020 --port 27030 --logpath /data/mongos.log --fork
+```
 
+============================================
+## STEP 4: ADD SHARDS TO CLUSTER
+============================================
+```bash
+mongosh --port 27030 --eval '
+sh.addShard("shard1/localhost:27017,localhost:27018");
+sh.addShard("shard2/localhost:27022,localhost:27023");
+'
+```
+
+### command to enable sharding on a particular database
+```bash
+mongosh --port 27030 --eval '
+// Enable sharding for database
+sh.enableSharding("myDatabase");
+
+// Create collection with shard key
+sh.shardCollection("myDatabase.users", { _id: "hashed" });
+'
+```
+
+!! Note :- <br>
+--> Keep in mind to remove the directory conflict if starting a new setup for sharding.<br>
+--> Also make for using Sharding on a LAN use the ip instead of localhost as mongo does not support both local and ips at a same time<br>
+--> 
