@@ -4,6 +4,6 @@
 
 ### Important links :
 
-1. [SetUp Static IP](./Static_Setup.md) (Imp)<br>
+1. [Static IP SetUp](./Static_Setup.md) (Imp)<br>
 2. [SetUp Guide](./Sharding_Setup.md) (Basic)<br>
-3. [Mapping in Shards](./Working_shardMapping.md)<br>
+3. [Shards Map check](./Working_shardMapping.md)<br>
