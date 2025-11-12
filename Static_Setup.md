@@ -4,6 +4,7 @@
 
 By default, most routers assign **dynamic IPs** (DHCP) that can change each time you reconnect. To make your system always use the same IP, follow the steps below.
 
+===========================================
 ## For Linux
 ===========================================
 ```bash
@@ -67,6 +68,7 @@ Then restart networking:
 sudo systemctl restart networking
 ```
 
+===========================================
 ## For Windows
 ===========================================
 
