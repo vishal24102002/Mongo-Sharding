@@ -1,6 +1,6 @@
 ## Sharding Guide
 
-[Link Text](./ShardingSetup.md)<br>
-[Link Text](./another-file.md)<br>
+[SetUp Guide](./Sharding_Setup.md)<br>
+[Mapping in Shards](./.md)<br>
 [Link Text](./another-file.md)<br>
 [Link Text](./another-file.md)<br>
