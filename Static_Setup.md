@@ -1,5 +1,5 @@
 ===========================================
-# Static IP
+# Static IP SetUp
 ===========================================
 
 By default, most routers assign **dynamic IPs** (DHCP) that can change each time you reconnect. To make your system always use the same IP, follow the steps below.
