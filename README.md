@@ -2,5 +2,5 @@
 
 ======================================
 ### Important links :
-[SetUp Guide](./Sharding_Setup.md)<br>
+[SetUp Guide](./Sharding_Setup.md) (Basic)<br>
 [Mapping in Shards](./Working_shardMapping.md)<br>
