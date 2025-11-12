@@ -8,7 +8,7 @@ By default, most routers assign **dynamic IPs** (DHCP) that can change each time
 ```bash
 ps -e | grep -E "NetworkManager|netplan|ifup"
 ```
-if the above query shows NetworkManager then use the below code 
+### if the above query shows NetworkManager then use the below code 
 ```bash
 nmcli con show
 ```
@@ -21,7 +21,7 @@ sudo nmcli con mod "Wired connection 1" ipv4.method manual
 sudo nmcli con up "Wired connection 1"
 ```
 
-If your system uses Netplan, edit the config file (the name varies, e.g. /etc/netplan/01-netcfg.yaml):
+### If your system uses Netplan, edit the config file (the name varies, e.g. /etc/netplan/01-netcfg.yaml):
 ```bash
 sudo nano /etc/netplan/01-netcfg.yaml
 ```
@@ -46,7 +46,7 @@ Then apply:
 sudo netplan apply
 ```
 
-If your system still uses the interfaces file (older systems):
+### If your system still uses the interfaces file (older systems):
 ```bash
 sudo nano /etc/network/interfaces
 ```
